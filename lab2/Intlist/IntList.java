@@ -1,3 +1,7 @@
+package Intlist;
+
+import edu.princeton.cs.algs4.In;
+
 import java.util.Formatter;
 
 /**
@@ -82,7 +86,12 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList result = A;
+        while (result.rest != null) {
+            result = result.rest;
+        }
+        result.rest = B;
+        return A;
     }
 
     /**
@@ -91,7 +100,19 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList p = new IntList(0, null);
+        IntList result = p;
+        while (A != null) {
+            result.rest = new IntList(A.first, null);
+            A = A.rest;
+            result = result.rest;
+        }
+        while (B != null) {
+            result.rest = new IntList(B.first, null);
+            B = B.rest;
+            result = result.rest;
+        }
+        return p.rest;
     }
 
 

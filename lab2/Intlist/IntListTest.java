@@ -1,5 +1,7 @@
-import static org.junit.Assert.*;
+package Intlist;
 
+import static org.junit.Assert.*;
+import Intlist.IntList;
 import org.junit.Test;
 
 public class IntListTest {
