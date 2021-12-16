@@ -47,6 +47,7 @@ public class IntListTest {
         assertEquals(IntList.of(1, 4, 9), res);
     }
 
+
     @Test
     public void testDcatenate() {
         IntList A = IntList.of(1, 2, 3);
@@ -63,6 +64,13 @@ public class IntListTest {
         IntList exp = IntList.of(1, 2, 3, 4, 5, 6);
         assertEquals(exp, IntList.catenate(A, B));
         assertEquals(IntList.of(1, 2, 3), A);
+    }
+
+    @Test
+    public void testNullPoint(){
+        IntList A = IntList.of();
+        IntList B = IntList.of(4, 5, 6);
+        assertEquals(IntList.of(4,5,6), IntList.dcatenate(A, B));
     }
 
 }
